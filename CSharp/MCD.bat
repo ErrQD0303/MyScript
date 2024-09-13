@@ -2,11 +2,22 @@
 REM This batch is designed to make a DSA Project
 :: Author: ErrQD3396 - Dat Nguyen Quoc
 
-if "%~1"=="" (
-    echo Error: Missing project name argument.
-    exit /b 1
+if "%~1"=="" (    
+    echo MCD - Make C Sharp Directory - ErrQD0303
+    echo Type /? for help
+    exit /b 0
+) else if "%~1"=="/?" (  
+    echo MCD - Make C Sharp Directory
+    echo.
+    echo Syntax: MCD ^<Project-Name^> ^<Project-type^>
+    echo.
+    echo Valid Project Type:
+    echo - Console App: console or -c
+    echo - Web Api App: wepapi or -w
+    exit /b 0
 )
 
+:: Change your c#Repos variable to the folder you want to install
 set c#Repos=C:\Users\ADMIN\source\repos
 set file=%c#Repos%\%~1
 
